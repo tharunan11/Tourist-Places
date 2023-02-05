@@ -1,0 +1,18 @@
+.di {
+  background-color: #c2ffc3;
+}
+/* body {
+  margin-left: 15px;
+} */
+.di {
+  display: inline-block;
+  /* justify-content: center; */
+  border: 100px;
+}
+.wid {
+  /* min-width: 400px;
+  max-width: 400px;
+  min-height: 100px;
+  max-height: 100px; */
+  word-wrap: break-word;
+}

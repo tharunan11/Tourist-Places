@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import { robots } from "./robots";
-import CardList from "../components/Cardlist";
+import { Places } from "./Places";
+import Baselist from "../components/Baselist";
 import SearchBox from "../components/Searchbox";
 import "./App.css";
-import Scroll from "../components/Scroll";
+import Scroll from "../components/Scrollpane";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      robots: robots,
+      Places: Places,
       searchfield: "",
     };
   }
@@ -17,32 +17,30 @@ class App extends Component {
   //   componentDidMount() {
   //     fetch("https://jsonplaceholder.typicode.com/users")
   //       .then((response) => response.json())
-  //       .then((users) => this.setState({ robots: users }));
+  //       .then((users) => this.setState({ Places: users }));
   //   }
 
   onSearhChange = (event) => {
     this.setState({ searchfield: event.target.value });
   };
   render() {
-    const filteredrobots = this.state.robots.filter((robots) => {
+    const filteredPlaces = this.state.Places.filter((Places) => {
       return (
-        robots.name
+        Places.name
           .toLowerCase()
           .includes(this.state.searchfield.toLowerCase()) ||
-        robots.city.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        Places.city.toLowerCase().includes(this.state.searchfield.toLowerCase())
       );
     });
     return (
       <div className="tc">
         <h1 className="f1">
-          <div className="rbf">
-            Best Tourist Places In <span class="india">INDIA</span>
-          </div>
+          <div className="rbf">Best Tourist Places In INDIA</div>
         </h1>
         <SearchBox searchChange={this.onSearhChange} />
         <Scroll>
           <div className="container">
-            <CardList robots={filteredrobots} />
+            <Baselist Places={filteredPlaces} />
           </div>
         </Scroll>
       </div>

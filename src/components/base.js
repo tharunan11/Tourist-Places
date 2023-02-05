@@ -1,7 +1,7 @@
 import React from "react";
-import "./Card.css";
+import "./base.css";
 
-const Card = (props) => {
+const Base = (props) => {
   const { name, city, id } = props;
   return (
     <div className=" dib di tc ma2 br3 pa3 ma3 grow ">
@@ -18,4 +18,4 @@ const Card = (props) => {
     </div>
   );
 };
-export default Card;
+export default Base;
